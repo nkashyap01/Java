@@ -1,0 +1,158 @@
+
+
+package Project2;
+
+
+
+import java.util.Scanner;
+
+
+
+public class Company2 {
+
+
+    public static void main(String[] args) {
+
+
+      
+
+
+    	int[] departments = new  int[4];
+
+
+        String[] designations = {"Manager", "Supervisor", "Store Keeper", "Peon",
+
+
+        		"Salesperson", "Engineer", "Programmer", "Analyst", "Designer", "Accountant"};
+
+
+        int[][] salaries = new int[4][10];
+
+
+         
+
+
+        Scanner sc = new Scanner(System.in);
+
+
+
+       
+
+
+        for (int i = 0; i < 4; i++) {
+
+
+            for (int j = 0; j < 10; j++) {
+
+
+                System.out.print("Enter the salary of " + designations[j] + " of department " + (i + 1) + ": ");
+
+
+                salaries[i][j] = sc.nextInt();
+
+
+            }
+
+
+        }
+
+
+
+       
+
+
+        int[] highestPaidManagerSalary = new int[4];
+
+
+        int highestOverallManagerSalary = 0; 
+
+
+        for (int i = 0; i < 4; i++) {
+
+
+            for (int j = 0; j < 10; j++) {
+
+
+                if (designations[j].equals("Manager")) {
+
+
+                    int salary = salaries[i][j];
+
+
+                    
+
+
+                        if (salary > highestOverallManagerSalary) {
+
+
+                            highestOverallManagerSalary = salary;
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+
+            }
+
+
+     
+
+
+        int lowestPaidPeonSalary = Integer.MAX_VALUE;
+
+
+        int lowestPaidPeonDepartment = 0;
+
+
+        for (int i = 0; i < 4; i++) {
+
+
+            int salary = salaries[i][3]; // Peon designation is at index 3
+
+
+            if (salary < lowestPaidPeonSalary) {
+
+
+                lowestPaidPeonSalary = salary;
+
+
+                lowestPaidPeonDepartment = i;
+
+
+            }
+
+
+        }
+
+
+
+
+        
+
+
+
+       
+
+
+        
+
+
+        System.out.println("Highest salary of manager across all departments is RS" + highestOverallManagerSalary);
+
+
+        System.out.println("Lowest paid Peon has a salary of RS" + lowestPaidPeonSalary + " in department " + (lowestPaidPeonDepartment + 1));
+
+
+    }
+
+
+
+
+
+
+}
