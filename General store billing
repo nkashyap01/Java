@@ -1,0 +1,815 @@
+
+
+package javaproject;
+
+
+
+import java.util.Scanner;
+
+
+
+class Store
+
+
+{
+
+
+	Scanner sc = new Scanner(System.in);
+
+
+	int i,ch,d;
+
+
+	int b=0;
+
+
+	int q[]= new int[5];
+
+
+	int tp[]= new int[5];
+
+
+
+    String[] PProduct = {"soap","detergent", "oil","teabags", "honey" };
+
+
+      
+
+
+    int[] PPrice= {10,60,100,120,150};
+
+
+    int[] PQuantity= {100,50,40,70,20};
+
+
+
+    int[] PExpire= { 200,365,365,600,900 };
+
+
+    
+
+
+    String[] NPProduct = {"Milk","Bread","Butter","Curd","Panner"};
+
+
+    	    int[] NPPrice= {50,30,50,100,80};
+
+
+    	    int[] NPQuantity= {40,20,15,10,20};
+
+
+
+    	    int[] NPExpire= { 2,4,30,15,15 };
+
+
+    void show()
+
+
+    {
+
+
+    	
+
+
+    	
+
+
+    System.out.println("*** Which type of product you want to sell ***");
+
+
+    System.out.println(" ");
+
+
+
+    System.out.println("1. For selling Non-perishable product");
+
+
+    System.out.println("2. For selling perishable product");
+
+
+    System.out.println("   ");
+
+
+
+     ch = sc.nextInt();
+
+
+     System.out.println("Enter the day passes after purchasing item");
+
+
+     d=sc.nextInt();
+
+
+
+    if (ch== 1) 
+
+
+    {
+
+
+    	 
+
+
+    		System.out.println("product\t\tquantity\tPrice(per item)\tExpire within(Days)");
+
+
+    		
+
+
+    		
+
+
+   
+
+
+    	for( i=0;i<=4;i++)
+
+
+    	{
+
+
+             if(i==1)
+
+
+             {
+
+
+            	 
+
+
+            	 System.out.println(PProduct[i]+"\t"+PQuantity[i]+"\t\t"+PPrice[i]+"\t\t"+((PExpire[i])-d));
+
+
+             }
+
+
+             else
+
+
+             {
+
+
+            	 
+
+
+    		System.out.println(PProduct[i]+"\t\t"+PQuantity[i]+"\t\t"+PPrice[i]+"\t\t"+((PExpire[i])-d));}
+
+
+    
+
+
+    	}
+
+
+       
+
+
+    }
+
+
+    if (ch == 2) 
+
+
+    {
+
+
+    
+
+
+    		System.out.println("product\t\tquantity\tPrice(per item)\tExpire within(Days)");
+
+
+   
+
+
+    	for( i=0;i<=4;i++)
+
+
+    	{
+
+
+             
+
+
+    		
+
+
+    		System.out.println(NPProduct[i]+"\t\t"+NPQuantity[i]+"\t\t"+NPPrice[i]+"\t\t"+((NPExpire[i])-d));
+
+
+    
+
+
+    	}
+
+
+       
+
+
+    }
+
+
+    System.out.println("________________________________________________");
+
+
+    }
+
+
+    
+
+
+    void bill()
+
+
+    {
+
+
+    	
+
+
+    
+
+
+    for(i=0;i<=4;i++)                      
+
+
+    {
+
+
+    	if (ch ==1)
+
+
+    System.out.println("press:-"+(i+1)+"for"+PProduct[i]);
+
+
+    	else if(ch ==2) {
+
+
+    		System.out.println("press:-"+(i+1)+"for"+NPProduct[i]);	}
+
+
+    	else
+
+
+    	{
+
+
+    		break;
+
+
+    	}
+
+
+    	
+
+
+    }
+
+
+    while(true)
+
+
+    {
+
+
+    	 
+
+
+    
+
+
+System.out.println("Enter choice for product");
+
+
+int c=sc.nextInt();
+
+
+
+if(ch==1)
+
+
+	{
+
+
+switch(c)
+
+
+{
+
+
+
+case 1: System.out.println("Enter quantity for"+PProduct[0]);
+
+
+	  q[0]=sc.nextInt();
+
+
+	  PQuantity[0]=PQuantity[0]-q[0];
+
+
+	 tp[0]=q[0]*PPrice[0];
+
+
+	 
+
+
+	 b=b+tp[0];
+
+
+	 
+
+
+	 System.out.println(" Total price for" +PProduct[0]+"="+tp[0]); 
+
+
+	   break;
+
+
+ 
+
+
+case 2:
+
+
+	 System.out.println("Enter quantity for"+PProduct[1]);
+
+
+	  q[1]=sc.nextInt();
+
+
+	  PQuantity[1]=PQuantity[1]-q[1];
+
+
+	  tp[1]=q[1]*PPrice[1];
+
+
+	  b=b+tp[1];
+
+
+	 System.out.println(" Total price for"+PProduct[1]+"="+tp[1]);break;
+
+
+case 3:
+
+
+	 System.out.println("Enter quantity for"+PProduct[2]);
+
+
+	  q[2]=sc.nextInt();
+
+
+	  PQuantity[2]=PQuantity[2]-q[2];
+
+
+	  tp[2]=q[2]*PPrice[2];
+
+
+	  b=b+tp[2];
+
+
+	 System.out.println(" Total price for"+PProduct[2]+"="+tp[2]);break;
+
+
+case 4:
+
+
+	 System.out.println("Enter quantity for"+PProduct[3]);
+
+
+	  q[3]=sc.nextInt();
+
+
+	  PQuantity[3]=PQuantity[3]-q[3];
+
+
+	  tp[3]=q[3]*PPrice[3];
+
+
+	  b=b+tp[3];
+
+
+	 System.out.println( " Total price for"+PProduct[3]+"="+tp[3]);break;
+
+
+case 5:
+
+
+	 System.out.println("Enter quantity for"+PProduct[4]);
+
+
+	  q[4]=sc.nextInt();
+
+
+	  PQuantity[4]=PQuantity[4]-q[4];
+
+
+	  tp[4]=q[4]*PPrice[4];
+
+
+	  b=b+tp[4];
+
+
+	 System.out.println( " Total price for"+PProduct[4]+"="+tp[4]);break;
+
+
+case 6:
+
+
+	 default:System.out.println("invalid choice");
+
+
+}
+
+
+
+	}
+
+
+
+ 
+
+
+    
+
+
+else
+
+
+{
+
+
+	switch(c)
+
+
+	{
+
+
+
+case 1: System.out.println("Enter quantity for"+NPProduct[0]);
+
+
+q[0]=sc.nextInt();
+
+
+NPQuantity[0]=NPQuantity[0]-q[0];
+
+
+tp[0]=q[0]*NPPrice[0];
+
+
+b=b+tp[1];
+
+
+
+System.out.println(" Total price for" +NPProduct[0]+"="+tp[0]); 
+
+
+ break;
+
+
+
+case 2:
+
+
+System.out.println("Enter quantity for"+NPProduct[1]);
+
+
+q[1]=sc.nextInt();
+
+
+NPQuantity[1]=NPQuantity[1]-q[1];
+
+
+tp[1]=q[1]*NPPrice[1];
+
+
+b=b+tp[1];
+
+
+System.out.println(" Total price for"+NPProduct[1]+"="+tp[1]);break;
+
+
+case 3:
+
+
+System.out.println("Enter quantity for"+NPProduct[2]);
+
+
+q[2]=sc.nextInt();
+
+
+NPQuantity[2]=NPQuantity[2]-q[2];
+
+
+tp[2]=q[2]*NPPrice[2];
+
+
+b=b+tp[2];
+
+
+System.out.println(" Total price for"+NPProduct[2]+"="+tp[2]);break;
+
+
+case 4:
+
+
+System.out.println("Enter quantity for"+NPProduct[3]);
+
+
+q[3]=sc.nextInt();
+
+
+NPQuantity[3]=NPQuantity[3]-q[3];
+
+
+tp[3]=q[3]*NPPrice[3];
+
+
+b=b+tp[3];
+
+
+System.out.println( " Total price for"+NPProduct[3]+"="+tp[3]);break;
+
+
+case 5:
+
+
+System.out.println("Enter quantity for"+NPProduct[4]);
+
+
+q[4]=sc.nextInt();
+
+
+NPQuantity[4]=NPQuantity[4]-q[4];
+
+
+tp[4]=q[4]*NPPrice[4];
+
+
+b=b+tp[4];
+
+
+System.out.println( " Total price for"+NPProduct[4]+"="+tp[4]);break;
+
+
+case 6:break;
+
+
+default:System.out.println("invalid choice");
+
+
+}
+
+
+	
+
+
+}
+
+
+
+if(c==6)
+
+
+{
+
+
+	break;
+
+
+}
+
+
+
+  
+
+
+    }
+
+
+}
+
+
+   void receipt()
+
+
+   {
+
+
+	   if(ch==1)
+
+
+	   {System.out.println("product\t\tquantity\tPrice(per item)\ttotal bill");
+
+
+		   for( i=0;i<=4;i++)
+
+
+		   {
+
+
+		        if(i==1)
+
+
+		        {
+
+
+		       	 
+
+
+		       	 System.out.println(PProduct[i]+"\t"+q[i]+"\t\t"+PPrice[i]+"\t\t"+tp[i]);
+
+
+		        }
+
+
+		        else
+
+
+		        {
+
+
+		       	 
+
+
+		   	System.out.println(PProduct[i]+"\t\t"+q[i]+"\t\t"+PPrice[i]+"\t\t"+tp[i]);}
+
+
+
+		   	
+
+
+		   	}
+
+
+		   System.out.println("Total bill is"+b);
+
+
+		   System.out.println("___________Thank you for shopping!!___________");
+
+
+		   System.out.println("******Visit Again******");
+
+
+	   }
+
+
+	   else
+
+
+	   {
+
+
+		   System.out.println("product\t\tquantity\tPrice(per item)\ttotal bill");
+
+
+		   for( i=0;i<=4;i++)
+
+
+		   {
+
+
+		        if(i==1)
+
+
+		        {
+
+
+		       	 
+
+
+		       	 System.out.println(NPProduct[i]+"\t"+q[i]+"\t\t"+NPPrice[i]+"\t\t"+tp[i]);
+
+
+		        }
+
+
+		        else
+
+
+		        {
+
+
+		       	 
+
+
+		   	System.out.println(NPProduct[i]+"\t\t"+q[i]+"\t\t"+NPPrice[i]+"\t\t"+tp[i]);}
+
+
+
+		   	
+
+
+		   	}
+
+
+		   System.out.println("Total bill is"+b);
+
+
+		   System.out.println("___________Thank you for shopping!!___________");
+
+
+		   System.out.println("******Visit Again******");
+
+
+	   }
+
+
+   }
+
+
+   
+
+
+   
+
+
+}
+
+
+	
+
+
+public class General_Store {
+
+
+
+	public static void main(String[] args) {
+
+
+		
+
+
+	Store s= new Store();
+
+
+	int ch;
+
+
+	Scanner sn=new Scanner(System.in);
+
+
+	while(true)
+
+
+	{
+
+
+		System.out.println("press 1 for show item");
+
+
+		System.out.println("press 2 for selling items");
+
+
+		System.out.println("press 3 for receipt");
+
+
+		System.out.println("Press 4 for exit");
+
+
+		System.out.println("Enter your choice");
+
+
+		ch=sn.nextInt();
+
+
+		switch(ch)
+
+
+		{
+
+
+		case 1: s.show();break;
+
+
+		case 2: s.bill();break;
+
+
+		case 3:s.receipt();break;
+
+
+		case 4:System.exit(0);
+
+
+		default:System.out.println("invalid choice");
+
+
+		}
+
+
+	}
+
+
+		
+
+
+
+	}
+
+
+
+
+
+
+
+}
