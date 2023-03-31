@@ -1,0 +1,85 @@
+package Project2;
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+public class BankApplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Banking Application");
+        
+        // Create a user account
+        System.out.print("Enter your full name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter your username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+        while(!isValidPassword(password)) {
+            System.out.println("Invalid password! Password should contain at least "
+            		+ "1 lowercase letter, 1 uppercase letter, 1 digit, "
+            		+ "1 of the following characters: $#@ and length "
+            		+ "should be between 6 and 12.");
+            System.out.print("Enter your password again: ");
+            password = scanner.nextLine();
+        }
+        System.out.print("Enter your initial balance: ");
+        double balance = scanner.nextDouble();
+        
+        // Login to the user account
+        System.out.print("Enter your username: ");
+        String inputUsername = scanner.next();
+        System.out.print("Enter your password: ");
+        String inputPassword = scanner.next();
+        while(!inputUsername.equals(username) || !inputPassword.equals(password)) {
+            System.out.println("Invalid credentials! Please try again.");
+            System.out.print("Enter your username: ");
+            inputUsername = scanner.next();
+            System.out.print("Enter your password: ");
+            inputPassword = scanner.next();
+        }
+        System.out.println("Login successful!");
+        
+        // Make a transaction
+        System.out.print("Enter the amount to be withdrawn: ");
+        double amount = scanner.nextDouble();
+        double totalAmount = amount + 100; // Adding bank charges
+        if(balance >= totalAmount) {
+            balance -= totalAmount;
+            System.out.println("Transaction successful! ");
+            	System.out.println("bank charges is :- 100\nYour current balance is " + balance);
+        } else {
+            System.out.println("Transaction failed! Insufficient balance.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean isValidPassword(String password) {
+        if (password.length() < 6 || password.length() > 12) {
+            return false;
+        }
+        
+        boolean hasLowerCase = false;
+        boolean hasUpperCase = false;
+        boolean hasDigit = false;
+        boolean hasSpecialChar = false;
+        
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isLowerCase(c)) {
+                hasLowerCase = true;
+            } else if (Character.isUpperCase(c)) {
+                hasUpperCase = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            } else if ("$#@".indexOf(c) >= 0) {
+                hasSpecialChar = true;
+            }
+        }
+        
+        return hasLowerCase && hasUpperCase && hasDigit && hasSpecialChar;
+    }
+}
+     
