@@ -1,0 +1,183 @@
+
+
+ package Project2;
+
+
+ import java.util.Scanner;
+
+
+ 
+
+
+public class Mca {
+
+
+    
+
+
+    public static void main(String[] args) {
+
+
+        
+
+
+        Scanner sc = new Scanner(System.in);
+
+
+        
+
+
+        System.out.println("Information about universities:");
+
+
+        System.out.println("1. LPU");
+
+
+        System.out.println("\tAdvantages: Excellent faculty and facilities," +
+
+
+        		 "\n\t\tstrong industry partnerships,"
+
+
+        		 +"\n\t\tstrong placement ");
+
+
+        System.out.println("\tScholarship schemes: Merit-based scholarships up to 50% "
+
+
+        		+ "\n\t\tof tuition fees");
+
+
+        System.out.println("2. CU");
+
+
+        System.out.println("\tAdvantages: Good placement, "
+
+
+        		+ "\n\t\tflexible course options");
+
+
+        System.out.println("\tScholarship schemes: Need-based scholarships up to 25% of "
+
+
+        		+ "\n\t\ttuition fees");
+
+
+        System.out.println("3. PU");
+
+
+        System.out.println("\tAdvantages: Personalized attention "
+
+
+        		+ "\n\t\tfrom faculty" +"\n\t\tengage in lots of extra curricular activities");
+
+
+        System.out.println("\tScholarship schemes: Diversity scholarships up to 20% of "
+
+
+        		+ "\n\t\ttuition fees ");
+
+
+        
+
+
+        System.out.println("Please enter your preferences:");
+
+
+        System.out.println("1. Do you want excellent faculty and facilities,");
+
+
+        System.out.println("   or good placement or personalized attention");
+
+
+        String preference1 = sc.nextLine();
+
+
+        System.out.println("2. Strong placement or flexible course options or ");
+
+
+        System.out.println("   extra curricular activities");
+
+
+        String preference2 = sc.nextLine();
+
+
+        System.out.println("3. Scholarships up to 50% or scholarships up to 25% or ");
+
+
+        System.out.println("   scholarships up to 20%"); 
+
+
+        String preference3 = sc.nextLine();
+
+
+        
+
+
+        if (preference1.equalsIgnoreCase("excellent faculty and facilities") && 
+
+
+        		preference2.equalsIgnoreCase("strong placement") &&
+
+
+        		preference3.equalsIgnoreCase("scholarships up to 50%")) {
+
+
+            System.out.println("Based on your preferences, LPU University would be "
+
+
+            		+ "a good choice for you.");
+
+
+        } else if (preference1.equalsIgnoreCase("good placement") &&
+
+
+        		preference2.equalsIgnoreCase("flexible course options") &&
+
+
+        		preference3.equalsIgnoreCase("scholarships up to 25%")) {
+
+
+            System.out.println("Based on your preferences, CU University would be a"
+
+
+            		+ " good choice for you.");
+
+
+        } else if (preference1.equalsIgnoreCase("personalized attention") &&
+
+
+        		preference2.equalsIgnoreCase("extra curricular activities") && 
+
+
+        		preference3.equalsIgnoreCase("scholarships up to 20%")) {
+
+
+            System.out.println("Based on your preferences, PU University would be a good "
+
+
+            		+ "choice for you.");
+
+
+        } else {
+
+
+            System.out.println("Based on your preferences, we cannot determine which university would be the best fit for you.");
+
+
+        }
+
+
+        
+
+
+        sc.close();
+
+
+    }
+
+
+
+
+
+}
