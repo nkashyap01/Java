@@ -1,0 +1,606 @@
+
+
+ package javaproject;
+
+
+ import java.util.Scanner;
+
+
+
+
+
+ class HotelsManagement{
+
+
+
+   static int q, c, w, x, tw = 0;
+
+
+
+   static Scanner sc = new Scanner(System.in);
+
+
+
+   static int input() {
+
+
+     System.out.println("Enter the quantity of food in kg");
+
+
+     q = sc.nextInt();
+
+
+     System.out.println("Enter the amount of consumption in kg");
+
+
+     c = sc.nextInt();
+
+
+     w = q - c;
+
+
+     tw = tw + w;
+
+
+     return w;
+
+
+   }
+
+
+
+
+ class restaurant {
+
+
+
+   void krishna() {
+
+
+     System.out.println("Welcome to Krishna Sweets");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in krihsna sweet is:-" + x);
+
+
+   }
+
+
+
+   void dream() {
+
+
+     System.out.println("Welcome to dream Sweets");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in dream sweet is:-" + x);
+
+
+   }
+
+
+
+   void Rfc() {
+
+
+     System.out.println("Welcome to Rfc restaurant");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Rfc restaurant is:-" + x);
+
+
+   }
+
+
+
+   void Biryani_Mahal() {
+
+
+     System.out.println("Welcome to Biryani Mahal restaurant");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Biryani Mahal restaurant is:-" + x);
+
+
+   }
+
+
+
+   void remainingfood() {
+
+
+     System.out.println("Total wastage food from all places is " + tw);
+
+
+     System.out.println("Now supply this food for charity ");
+
+
+   }
+
+
+
+ }
+
+
+
+ class foodcourt {
+
+
+
+   void NK() {
+
+
+     System.out.println("Welcome to  NK food court");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in food court is:-" + x);
+
+
+   }
+
+
+
+   void Kitchenette() {
+
+
+     System.out.println("Welcome to  Kitchenette court");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Kitchenette is:-" + x);
+
+
+   }
+
+
+
+   void Oven_Express() {
+
+
+     System.out.println("Welcome to  Oven Express");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Oven Express is:-" + x);
+
+
+   }
+
+
+ }
+
+
+
+ class marriage_bureau {
+
+
+
+   void Madhur_Milan() {
+
+
+     System.out.println("Welcome to Madhur Milan marriage bureau");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Madhur Mialn marriage bureau is:-" + x);
+
+
+   }
+
+
+
+   void Bandhan() {
+
+
+     System.out.println("Welcome to  Bandhan marriage bureau");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Bandhan marriage bureau is:-" + x);
+
+
+   }
+
+
+
+   void Perfect() {
+
+
+     System.out.println("Welcome to  Perfect marriage bureau");
+
+
+     x = input();
+
+
+     System.out.println("Wastage in Perfect marriage bureau is:-" + x);
+
+
+   }
+
+
+
+ }
+
+
+
+ }
+
+
+
+ public class Food {
+
+
+
+   public static void main(String[] args) {
+
+
+     int ch, c;
+
+
+
+     Scanner sn = new Scanner(System.in);
+
+
+
+     HotelsManagement h=new HotelsManagement();
+
+
+
+     HotelsManagement.restaurant r=new HotelsManagement().new restaurant();
+
+
+
+     HotelsManagement.foodcourt f=new HotelsManagement().new foodcourt();
+
+
+
+     HotelsManagement.marriage_bureau m=new HotelsManagement().new marriage_bureau();
+
+
+
+
+     while (true) {
+
+
+       System.out.println("Don't waste food and get reward");
+
+
+       System.out.println("press 1 for restaurant");
+
+
+       System.out.println("press 2 for foodcourt");
+
+
+       System.out.println("press 3 for marriage_bureau");
+
+
+       System.out.println("press 4 for exit");
+
+
+       System.out.println("press 5 for see the amount of total wastage food");
+
+
+       System.out.println("Enter your choice");
+
+
+       ch = sn.nextInt();
+
+
+
+       switch (ch) {
+
+
+         case 1:
+
+
+           while (true) {
+
+
+             System.out.println("Don't waste food and get reward");
+
+
+             System.out.println("press 1 for Krishna");
+
+
+             System.out.println("press 2 for Dream");
+
+
+             System.out.println("press 3 for RFC");
+
+
+             System.out.println("press 4 for Biryani Mahal");
+
+
+             System.out.println("press 5 for go to next menu list");
+
+
+             c = sn.nextInt();
+
+
+             if (c == 5) {
+
+
+               break;
+
+
+             }
+
+
+             switch (c) {
+
+
+               case 1:
+
+
+                 r.krishna();
+
+
+                 break;
+
+
+               case 2:
+
+
+                 r.dream();
+
+
+                 break;
+
+
+               case 3:
+
+
+                 r.Rfc();
+
+
+                 break;
+
+
+               case 4:
+
+
+                 r.Biryani_Mahal();
+
+
+                 break;
+
+
+               default:
+
+
+                     System.out.println("Invalid choice");
+
+
+             }
+
+
+           }
+
+
+          // break;
+
+
+         case 2:
+
+
+           while (true) {
+
+
+             System.out.println("Don't waste food and get reward");
+
+
+             System.out.println("press 1 for NK");
+
+
+             System.out.println("press 2 for Kitchenette");
+
+
+             System.out.println("press 3 for Oven_Express ");
+
+
+             System.out.println("press 5 for go to next menu list");
+
+
+
+             c = sn.nextInt();
+
+
+             if (c == 5) {
+
+
+               break;
+
+
+             }
+
+
+
+             switch (c) {
+
+
+               case 1:
+
+
+                 f.NK();
+
+
+                 break;
+
+
+               case 2:
+
+
+                 f.Kitchenette();
+
+
+                 break;
+
+
+               case 3:
+
+
+                 f.Oven_Express();
+
+
+                 break;
+
+
+               default:
+
+
+                  break;
+
+
+             }
+
+
+           }
+
+
+           //break;
+
+
+
+         case 3:
+
+
+
+           while (true) {
+
+
+             System.out.println("Don't waste food and get reward");
+
+
+             System.out.println("press 1 for Madhur_Milan");
+
+
+             System.out.println("press 2 for Bandhan");
+
+
+             System.out.println("press 3 for Perfect ");
+
+
+             System.out.println("press 6 for go to main menu list");
+
+
+             c = sn.nextInt();
+
+
+             if (c == 6) {
+
+
+               break;
+
+
+             }
+
+
+             switch (c) {
+
+
+               case 1:
+
+
+                 m.Madhur_Milan();
+
+
+                 break;
+
+
+               case 2:
+
+
+                 m.Bandhan();
+
+
+                 break;
+
+
+               case 3:
+
+
+                 m.Perfect();
+
+
+                 break;
+
+
+             default :
+
+
+             System.out.println("Invalid choice");
+
+
+             }
+
+
+           }
+
+
+             break;
+
+
+
+           case 5:
+
+
+                  r.remainingfood();
+
+
+                  break;
+
+
+           case 6:
+
+
+           System.exit(0);
+
+
+            default:
+
+
+           System.out.println("invalid choice");
+
+
+         
+
+
+         }
+
+
+       }
+
+
+     
+
+
+     }
+
+
+
+
+
+}
